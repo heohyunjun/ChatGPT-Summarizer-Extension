@@ -1,0 +1,25 @@
+{
+  "name": "Your Extension",
+  "version": "1.0",
+  "description": "Description of your extension",
+  "permissions": [
+    "activeTab",
+    "storage"
+  ],
+  "host_permissions": [
+    "https://chat.openai.com/*"
+  ],
+  "background": {
+    "service_worker": "service-worker.js" 
+  },
+  "action": { 
+    "default_popup": "popup.html"  
+  },
+  "content_scripts": [
+      {
+        "matches": ["https://chat.openai.com/*"],
+        "js": ["content.js"]
+      }
+  ],
+  "manifest_version": 3
+}
